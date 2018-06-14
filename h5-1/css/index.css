@@ -1,0 +1,1005 @@
+/* css初始化 */
+*{
+    margin: 0;
+    padding: 0;
+}
+img {
+    display:block;
+}
+body,html{
+    height: 100%;
+    width: 100%;
+}
+.section {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.section:not(:first-child){
+    opacity: 0;
+}
+/* 固定的3个图片 */
+img.music {
+    position: fixed;
+    left: 10%;
+    top: 9.745%;
+    z-index: 100;
+    width: 9.33333%;
+    height:5.247%;
+    animation: music 3s linear infinite;
+}
+img.logo {
+    position:fixed;
+    right:5.3333%;
+    top:4.49%;
+    width: 37.3333%;
+    height: 4.49%;
+    z-index: 100;
+    animation: logo 2s linear ;
+}
+img.leaves {
+    position:fixed;
+    left: 0;
+    top:0;
+    width: 32%;
+    height: 10.5%;
+    z-index: 100;
+    transform-origin: 0 0;
+    animation: leaves 2s linear alternate infinite;
+}
+img.stop{
+    animation-play-state: paused;
+}
+img.start{
+    animation-play-state: running;
+}
+@keyframes music {
+    0%{
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg)
+    }
+}
+@keyframes logo {
+    0% {
+        transform:translateX(10rem) rotate(360deg);
+        
+    }
+    100% {
+        transform: translateX(0rem) rotate(0deg);
+    }
+}
+@keyframes leaves {
+    0% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(-10deg);
+    }
+}
+/*所有屏幕的背景 */
+.section{
+    background: url(../images/bg-1.png)no-repeat ;
+    background-size: cover;
+    position: relative;
+}
+.leaves1{
+    position: absolute;
+    top:15.74%;
+    right: 14.67%;
+    width: 6%;
+    height: 7.87%;
+    z-index: 101;
+}
+
+.section:not(:first-child).now {
+    animation: section 0.4s ease forwards;
+    transform-origin: bottom;
+}
+@keyframes section{
+    0%{
+        opacity: 0;
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes leaves1 {
+    0% {
+        top:15.74%;
+        right: 14.667%;
+        opacity: 1;
+    }
+    30% {
+        top:37.48%;
+        right: 6rem;
+    }
+    60% {
+        top:59.997%;
+        right: 26.67%;
+    }
+    100% {
+        top:89.95%;
+        right: 66.67%;
+        opacity: 0;
+    }
+}
+.leaves1 {
+    animation: leaves1 10s linear infinite;
+}
+
+/* 第一屏 */
+.section1 .right {
+    position: absolute;
+    right: -38.67%;
+    top:13.86%;
+    width: 38.67%;
+    height:9.07%;
+}
+.section1 .left{
+    position: absolute;
+    left: -30.93%;
+    top: 26.2%;
+    width: 30.93%;
+    height: 27.58%;
+    
+}
+.section1 .family {
+    position: absolute;
+    left: 8%;
+    bottom:6%;
+    width:84%;
+    height: 41.97%;
+    transform: scale(0)
+    
+}
+.section1 .zong{
+    position: absolute;
+    right: 6%;
+    top: -16.86%;
+    width: 28.68%;
+    height: 16.86%;
+}
+.section1 .biaoyu{
+    position: absolute;
+    left: 17.33%;
+    top:17.6%;
+    width: 48%;
+    height: 18%;
+    opacity: 0;
+    overflow: hidden;
+}
+.section1 .biaoyu img{
+    width: 100%;
+    height: 100%;
+}
+.section1 .smd {
+    position: absolute;
+    left: 10.67%;
+    top:24.7%;
+    width: 6.67%;
+    height: 5.247%;
+}
+.section1 .shuxian{
+    position: absolute;
+    right: 40%;
+    top:22.67%;
+    width: 0.26%;
+    height:0;
+    
+}
+.section1 .festival {
+    position: absolute;
+    right: 17.33%;
+    top: 20.98%;
+    width: 20%;
+    height: 3.748%;
+}
+.section1 .smdzf{
+    position: absolute;
+    top: 45.72%;
+    width: 0;
+    height: 2.398%;
+    left:50%;
+}
+.section1 .leaves1{
+    position: absolute;
+    top:15.74%;
+    right: 14.67%;
+    width: 6%;
+    height: 7.87%;
+    z-index: 101;
+}
+.section1 .bolang{
+    position: absolute;
+    width: 100%;
+    height: 15%;
+    left: 0;
+    bottom: 0;
+
+}
+@keyframes right {
+    0%{
+        right: -38.67%;
+    }
+    100% {
+        right: 0;
+    }
+}
+@keyframes left {
+    0%{
+        left:-30.93%;
+    }
+    100% {
+        left:0;
+    }
+}
+@keyframes family {
+    0% {
+       transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+}
+@keyframes zong {
+    0%{
+        top:-16.86%;
+    }
+    20%{
+       top:25.48%;
+       height: 2rem;
+    }
+    40%{
+        top:18%;
+    }
+    60%{
+        top:25.48%;
+        height: 2rem;
+    }
+    80%{
+        top:22%;
+    }
+    100%{
+        top:25.48%;
+        height: 16.86%;
+    }
+}
+@keyframes biaoyu{
+    0%{
+      opacity: 0;
+    }
+    100%{
+       opacity: 1;
+    }
+}
+@keyframes smd {
+    0%{
+       opacity: 1;
+    }
+    5%{
+       opacity: 0;
+    }
+    20%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes shuxian{
+    0%{
+      top:22.67%;
+      height: 0;
+    }
+    100%{
+       top:19.86%;
+       height: 5.62%;
+    }
+}
+@keyframes smdzf {
+    0%{
+        left: 50%;
+        width: 0rem;
+    }
+    100%{
+        left:2.667%;
+        width: 94.667%;
+    }
+}
+
+
+/* 第一屏动画 */
+.section1.now .right {
+    animation: right 1.5s 0.5s linear forwards;
+}
+.section1.now .left {
+    animation: left 1.5s 0.5s linear forwards;
+}
+.section1.now .family {
+    animation: family 1.5s 0.5s linear forwards;
+}
+.section1.now .zong{
+    animation: zong 3s 0.5s linear forwards;
+}
+.section1.now .biaoyu{
+    animation: biaoyu 1.5s 0.5s linear forwards ;
+}
+.section1.now .smd {
+    animation: smd 1.5s 0.5s linear forwards;
+}
+.section1.now .shuxian{
+   animation: shuxian 1s 0.5s linear forwards;
+}
+.section1.now .smdzf{
+    animation: smdzf 1.5s 0.7s linear forwards;
+}
+
+/* 第二屏 */
+.section2 .right{
+    position: absolute;
+    right: -38.67%;
+    top:10.86%;
+    width: 38.67%;
+    height:9.07%;
+}
+.section2 .left{
+    position: absolute;
+    left: -30.93%;
+    top: 13%;
+    width: 30.93%;
+    height: 27.58%;  
+}
+.section2 .jieshao {
+    position: absolute;
+    width:25.2% ;
+    height:3.6% ;
+    right:17.33% ;
+    top: 16.49%;
+}
+.section2 .wuyuewu {
+    position: absolute;
+    width:61.467%;
+    height: 8.02%;
+    right: -62%;
+    top:17.62%;
+}
+.section2 .duanwu {
+    position: absolute;
+    width: 76%;
+    height: 30.58%;
+    left: 15.06%;
+    top:37.26%;
+    transform-origin: left top;
+    transform: scale(0);
+}
+.section2 .bolang {
+    position: absolute;
+    width: 100%;
+    height: 15%;
+    left: 0;
+    bottom: 0;
+}
+.section2 .smd {
+    position: absolute;
+    width: 6.67%;
+    height: 5.247%;
+    right: 22.267%;
+    top:22.267% ;
+}
+.section2 .long {
+    position: absolute;
+    width: 78.67%;
+    height: 20.61%;
+    left:6% ;
+    bottom: 2%;
+}
+.section2 .tian{
+    position: absolute;
+    width: 18.67%;
+    height:9.82% ;
+    left: 20%;
+    bottom:15% ;
+}
+.section2 .xian{
+    position: absolute;
+    width: 18.67%;
+    height:9.82% ;
+    left:33.33% ;
+    bottom:20% ;
+}
+/* 第二屏动画 */
+@keyframes wuyuewu {
+    0%{
+        right: -62%;
+    }
+    100%{
+        right: 0%;
+    }
+}
+@keyframes  duanwu {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes jieshao{
+    0%{
+        opacity: 1;
+    }
+    20%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.now .jieshao{
+    animation: jieshao 2s 0.5s linear forwards;
+}
+.now .smd{
+    animation: smd 6s 0.5s linear forwards;
+}
+.now .right {
+    animation: right 1.5s  0.5s linear forwards;
+}
+.now .left {
+    animation: left 1.5s  0.5s linear forwards;
+}
+.now .wuyuewu{
+  animation: wuyuewu 1.5s  0.5s linear forwards;
+}
+.section2.now .duanwu{
+    animation: duanwu 1.5s 0.5s linear forwards;
+}
+/* 第三屏 */
+.section3 .right{
+    position: absolute;
+    right: -38.67%;
+    top:10.86%;
+    width: 38.67%;
+    height:9.07%;
+}
+.section3 .left{
+    position: absolute;
+    left: -30.93%;
+    top: 13%;
+    width: 30.93%;
+    height: 27.58%;  
+}
+.section3 .jieshao {
+    position: absolute;
+    width:25.2% ;
+    height:3.6% ;
+    right:17.33% ;
+    top: 16.49%;
+}
+.section3 .wuyuewu {
+    position: absolute;
+    width:61.467%;
+    height: 8.02%;
+    right: -62%;
+    top:17.62%;
+}
+.section3 .xuexiao{
+    position: absolute;
+    width: 64%;
+    height: 33.95%;
+    left: 17.47%;
+    top:37.26%;
+    opacity: 0;
+}
+.section3 .bolang {
+    position: absolute;
+    width: 100%;
+    height: 15%;
+    left: 0;
+    bottom: 0;
+}
+.section3 .smd {
+    position: absolute;
+    width: 6.67%;
+    height: 5.247%;
+    right: 22.267%;
+    top:22.267% ;
+}
+.section3 .long {
+    position: absolute;
+    width: 78.67%;
+    height: 20.61%;
+    left:6% ;
+    bottom: 2%;
+}
+.section3 .x1 {
+    position: absolute;
+    width:12.93% ;
+    height:6.747% ;
+    left: 17.33%;
+    top: 20.24%;
+}
+.section3 .x2{
+    position: absolute;
+    width: 16%;
+    height: 6.9%;
+    left: 53.33%;
+    bottom:23.24% ;
+}
+/* 第三屏动画 */
+@keyframes xuexiao {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    100%{
+       transform: scale(1);
+       opacity: 1;
+    }
+}
+.section3.now .xuexiao {
+    animation: xuexiao 1s 0.5s linear forwards;
+}
+
+
+
+/* 第四屏 */
+.section4 .right{
+    position: absolute;
+    right: -38.67%;
+    top:10.86%;
+    width: 38.67%;
+    height:9.07%;
+}
+.section4 .left{
+    position: absolute;
+    left: -30.93%;
+    top: 13%;
+    width: 30.93%;
+    height: 27.58%;  
+}
+.section4 .jieshao {
+    position: absolute;
+    width:25.2% ;
+    height:3.6% ;
+    right:17.33% ;
+    top: 16.49%;
+}
+.section4 .wuyuewu {
+    position: absolute;
+    width:61.467%;
+    height: 8.02%;
+    right: -62%;
+    top:17.62%;
+}
+.section4 .kecheng{
+    position: absolute;
+    width: 65.47%;
+    height: 19.56%;
+    left: 16.93%;
+    top:37.26%;
+}
+.section4 .bolang {
+    position: absolute;
+    width: 100%;
+    height: 15%;
+    left: 0;
+    bottom: 0;
+}
+.section4 .smd {
+    position: absolute;
+    width: 6.67%;
+    height: 5.247%;
+    right: 22.267%;
+    top:22.267% ;
+}
+.section4 .long {
+    position: absolute;
+    width: 78.67%;
+    height: 20.61%;
+    left:6% ;
+    bottom: 2%;
+}
+.section4 .web,.section4 .ui,.section4 .php{
+    position: absolute;
+    width: 18.13%;
+    height: 10.19%;
+    bottom: 28.63%;
+    left: 100%;
+}
+.section4 .web{
+    /* left: 12.67%; */
+}
+.section4 .ui{
+    /* left: 39%; */
+}
+.section4 .php{
+    /* left: 65.47%; */
+}
+.section4 .web-1,.section4 .ui-1,.section4 .php-1{
+    position: absolute;
+    width: 14.93%;
+    height: 2.02%;
+    bottom: 25.55%;
+}
+.section4 .web-1{
+    left: 13.87%;
+}
+.section4 .ui-1{
+    left: 41.2%;
+}
+.section4 .php-1{
+    left: 68.33%;
+}
+/* 第四屏 */
+@keyframes web {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: 12.67%;
+    }
+}
+@keyframes ui {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: 39%;
+    }
+}
+@keyframes php {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: 65.47%;
+    }
+}
+.section4.now .web {
+    animation:  web 1s  0.5s ease forwards;
+}
+.section4.now .ui {
+    animation:  ui 0.7s 1.5s ease forwards;
+}
+.section4.now .php {
+    animation:  php 0.3s 2.2s ease forwards;
+}
+/* 第五屏 */
+.section5 .right{
+    position: absolute;
+    right: -38.67%;
+    top:10.86%;
+    width: 38.67%;
+    height:9.07%;
+}
+.section5 .left{
+    position: absolute;
+    left: -30.93%;
+    top: 13%;
+    width: 30.93%;
+    height: 27.58%;  
+}
+.section5 .jieshao {
+    position: absolute;
+    width:25.2% ;
+    height:3.6% ;
+    right:17.33% ;
+    top: 16.49%;
+}
+.section5 .wuyuewu {
+    position: absolute;
+    width:61.467%;
+    height: 8.02%;
+    right: -62%;
+    top:17.62%;
+}
+.section5 .lingdao{
+    position: absolute;
+    width: 55.2%;
+    height: 20.39%;
+    left: 100%;
+    bottom:23.98%;
+}
+.section5 .bolang {
+    position: absolute;
+    width: 100%;
+    height: 15%;
+    left: 0;
+    bottom: 0;
+}
+.section5 .smd {
+    position: absolute;
+    width: 6.67%;
+    height: 5.247%;
+    right: 22.267%;
+    top:22.267% ;
+}
+.section5 .xiaozhang {
+    position: absolute;
+    width: 38.13%;
+    height: 21.44%;
+    left: 30.67%;
+    top:29.23% ;
+} 
+.section5 .l1 {
+    position: absolute;
+    width: 44.8%;
+    height: 15.37%;
+    left: 28%;
+    bottom:7.8%;
+}
+/* 第五屏 */
+@keyframes lingdao {
+    0%{
+        left: 100%;
+    }
+    100%{
+        left: 22.67%;
+    }
+}
+.section5.now .lingdao{
+    animation: lingdao 2s 0.5s linear forwards;
+}
+/*  第六屏 */
+.section6 .right{
+    position: absolute;
+    right: -38.67%;
+    top:10.86%;
+    width: 38.67%;
+    height:9.07%;
+}
+.section6 .left{
+    position: absolute;
+    left: -30.93%;
+    top: 13%;
+    width: 30.93%;
+    height: 27.58%;  
+}
+.section6 .jieshao {
+    position: absolute;
+    width:25.2% ;
+    height:3.6% ;
+    right:17.33% ;
+    top: 16.49%;
+}
+.section6 .wuyuewu {
+    position: absolute;
+    width:61.467%;
+    height: 8.02%;
+    right: -62%;
+    top:17.62%;
+}
+.section6 .yuangong{
+    position: absolute;
+    width: 60.67%;
+    height:21.59%;
+    left: -65%;
+    bottom:36%;
+}
+.section6 .bolang {
+    position: absolute;
+    width: 100%;
+    height: 15%;
+    left: 0;
+    bottom: 0;
+}
+.section6 .smd {
+    position: absolute;
+    width: 6.67%;
+    height: 5.247%;
+    right: 22.267%;
+    top:22.267% ;
+}
+.section6 .y1 {
+    position: absolute;
+    width: 21.6%;
+    height: 22.11%;
+    left: 19.47%;
+    top: -23%;
+}
+.section .y2 {
+    position: absolute;
+    width: 21.33%;
+    height: 12%;
+    right: 10.67%;
+    top: 30%;
+}
+.section .y3 {
+    position: absolute;
+    width: 20.93%;
+    height: 14.77%;
+    left:10.67% ;
+    bottom:24%;
+}
+.section .y4 {
+    position: absolute;
+    width: 33.07%;
+    height: 12%;
+    right: 9.33%;
+    bottom: 20.61%;
+}
+.section .y5 {
+    position: absolute;
+    width: 34%;
+    height: 15%;
+    left: 28%;
+    bottom: 6.7%;
+}
+/* 第六屏动画 */
+@keyframes yuangong{
+    0%{
+        left: -65%;
+    }
+    100% {
+        left: 20.67%;
+    }
+}
+@keyframes y1 {
+    0%{
+        top:-23%;
+    }
+    100%{
+        top:0%;
+    }
+}
+.section6.now .y1{
+    animation: y1 2s linear forwards;
+}
+.section6.now .yuangong{
+    animation: yuangong 2s 0.5s linear forwards;
+}
+/* 第七屏 */
+.section7 .right{
+    position: absolute;
+    right: -38.67%;
+    top:10.86%;
+    width: 38.67%;
+    height:9.07%;
+}
+.section7 .left{
+    position: absolute;
+    left: -30.93%;
+    top: 13%;
+    width: 30.93%;
+    height: 27.58%;  
+}
+.section7 .jieshao {
+    position: absolute;
+    width:25.2% ;
+    height:3.6% ;
+    right:17.33% ;
+    top: 16.49%;
+}
+.section7 .wuyuewu {
+    position: absolute;
+    width:61.467%;
+    height: 8.02%;
+    right: -62%;
+    top:17.62%;
+}
+.section7 .erweima{
+    position: absolute;
+    width: 44.67%;
+    height:25.11%;
+    left: 28%;
+    top: 33.35%;
+}
+.section7 .bolang {
+    position: absolute;
+    width: 100%;
+    height: 15%;
+    left: 0;
+    bottom: 0;
+}
+.section7 .smd {
+    position: absolute;
+    width: 6.67%;
+    height: 5.247%;
+    right: 22.267%;
+    top:22.267% ;
+}
+.section7 .w{
+    position: absolute;
+    width: 100%;
+    height: 24.73%;
+    bottom:14%;
+    left: 0%; 
+
+}
+.section7 .w1 {
+    position: absolute;
+    width: 30.80%;
+    height: 12%;
+    left: 35%;
+    
+}
+.section7 .w2 {
+    position: absolute;
+    width: 22.8%;
+    height:12%;
+    left: 40%;
+    top: 17%;
+}
+.section7 .w3 {
+    position: absolute;
+    width: 29.06%;
+    height: 12%;
+    left: 35%;
+    top: 36%;
+}
+.section7 .w4 {
+    position: absolute;
+    width: 22.8%;
+    height: 12%;
+    left: 40%;
+    top:56%
+}
+.section7 .w5 {
+    position: absolute;
+    width: 72.4%;
+    height: 24%;
+    left: 15%;
+    top:75%
+}
+/* 第七屏动画 */
+@keyframes w1 {
+    0%{
+        left: -32%;
+    }
+    100%{
+        left: 35%;
+    }
+}
+@keyframes w2 {
+    0% {
+        left: 101%;
+    }
+    100% {
+        left: 40%;
+    }
+}
+@keyframes w3 {
+    0%{
+        left: -29%;
+    }
+    100% {
+        left: 35%;
+    }
+}
+@keyframes w4{
+    0%{
+        left:101% ;
+    }
+    100%{
+        left:40% ;
+    }
+}
+@keyframes w5{
+    0%{
+        left: -75%;
+    }
+    100%{
+        left: 15%;
+    }
+}
+.section7.now .w1 {
+    animation: w1 2s 0.5s linear forwards;
+}
+.section7.now .w2 {
+    animation: w2 2s  0.5s linear forwards;
+}
+.section7.now .w3 {
+    animation: w3 2s 0.5s linear forwards;
+}
+.section7.now .w4 {
+    animation: w4 2s 0.5s linear forwards;
+}
+.section7.now .w5 {
+    animation: w5 2s 0.5s linear forwards;
+}
