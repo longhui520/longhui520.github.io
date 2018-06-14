@@ -1,0 +1,610 @@
+			html {
+				-ms-touch-action: none;
+				/* 阻止windows Phone 的默认触摸事件 */
+			}
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			ul {
+				list-style: none;
+			}
+			
+			body {
+				width: 100%;
+				*cursor: default;
+				overflow: hidden;
+				font: 16px/1.5 "Microsoft YaHei", Helvetica, STHeiti STXihei, Microsoft JhengHei, Arial;
+			}
+			.music{
+				width:9.2%;
+				height: 5.17%;
+				background: url(../images/page1/music.png) no-repeat;
+				background-size: 100% 100%;
+				position: fixed;
+				top: 13.5%;
+				left: 10.13%;
+				cursor: pointer;
+				/*animation: moveinleft 2s forwards;*/
+				z-index: 10;
+			}
+			@keyframes moveinleft{
+				0%{
+					left: -9.2%;
+				}
+				100%{
+					left: 10.13%;
+				}
+			}
+			.rotate{
+				animation: rotate 2s infinite;
+				animation-timing-function: linear;
+			}
+			@keyframes rotate{
+				0%{
+					transform: rotate(0deg);
+				}
+				100%{
+					transform: rotate(360deg);
+				}
+			}
+			#pageContain {
+				overflow: hidden;
+			}
+			
+			.page {
+				display: none;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			
+			.contain {
+				width: 100%;
+				height: 100%;
+				display: none;
+				position: relative;
+				z-index: 0;
+			}
+			
+			.current .contain,
+			.slide .contain {
+				display: block;
+			}
+			
+			.current {
+				display: block;
+				z-index: 1;
+			}
+			
+			.slide {
+				display: block;
+				z-index: 2;
+			}
+			
+			.swipe {
+				display: block;
+				z-index: 3;
+				transition-duration: 0ms !important;
+				-webkit-transition-duration: 0ms !important;
+			}
+			
+			.page1 {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				background: url(../images/page1/secition_background.png) no-repeat;
+				background-size:100% 100% ;
+			}
+			.top{
+				width: 100%;
+				height:100%;
+				position: relative;
+			}
+			.top_yezi{
+				width: 47.2%;
+				height: 13.5%;
+				background: url(../images/page1/yezi.png) no-repeat;
+				background-size: 100% 100%;
+				position: absolute;
+				left:0 ;
+				animation: fly 2s;
+				animation-timing-function: linear;
+				animation-iteration-count:infinite;
+				transform-origin: 0% 0%;
+				
+			}
+			@keyframes fly{
+				0%{
+					transform: rotate(0deg);
+				}
+				50%{
+					transform: rotate(2deg) ;
+				}
+				100%{
+					transform: rotate(0deg) 
+				}
+			}
+			.top_logo{
+				width: 36.67%;
+				height: 4.72%;
+				background: url(../images/page1/LOGO1.png) no-repeat;
+				background-size: 100% 100%;
+				position: absolute;
+				right: -36.67%;
+				top: 4.95%;
+				animation: movein 2s forwards;
+				animation-timing-function: ease;
+			}
+			@keyframes movein{
+				0%{
+					right:-36.67%
+				}
+				100%{
+					right: 4.53%;
+				}
+			}
+			
+			.leaves{
+				width:100%;
+				height: 60%;
+				position: absolute;
+				top: 13.5%;
+			}
+			.leaves li{
+				float: left;
+				margin-left: 10%;
+				z-index: 1;
+			}
+			.leaves li:nth-of-type(1){
+				width: 7.73%;
+				height: 4.04%;
+				position: absolute;
+				animation: drop1 8s infinite;
+				animation-timing-function: linear;
+				opacity: 0;
+			}
+			.leaves li:nth-of-type(1) img{
+				width: 100%;
+				height: 100%;
+			}
+			@keyframes drop1{
+				0%{top: 13.5%;opacity: 0;transform: scale(0);}
+				10%{top: 20%;left: 15%;opacity: 1;}
+				20%{top: 25%;left: 20%;transform: scale(1);}
+				30%{top: 30%;left: 10%;}
+				40%{top: 35% ;left: 0%;}
+				50%{top: 40%;left: 6%;}
+				60%{top: 45%;left: 15%;}
+				70%{top:50% ;left: 10%;}
+				80%{top:55% ;left:5% ;opacity: 1;}
+				90%{top:60% ;left: 10%; opacity: 0;}
+				100%{top: 65%;left: 15%;}
+			}
+			.leaves li:nth-of-type(2){
+				width: 7.73%;
+				height: 4.04%;
+				position: absolute;
+				top: 15%;
+				left: 20%;
+				animation: drop2 8s infinite;
+				animation-timing-function: linear;
+				animation-delay: 3s;
+				opacity: 0;
+			}
+			.leaves li:nth-of-type(2) img{
+				width: 100%;
+				height: 100%;
+			}
+			@keyframes drop2{
+				0%{top: 15%; left:20%;opacity: 0;transform: scale(0);}
+				10%{top: 20%;left: 25%;opacity: 1;}
+				20%{top: 25%;left: 30%;transform: scale(1);}
+				30%{top: 30%;left: 26%;}
+				40%{top: 35% ;left: 24%;}
+				50%{top: 40%;left: 28%;}
+				60%{top: 45%;left: 26%;opacity: 0;}
+				70%{top:50% ;left: 32%;}
+				80%{top:55% ;left:30% ;}
+				90%{top:60% ;left: 35%;}
+				100%{top: 65%;left: 33%;}
+			}
+			.leaves li:nth-of-type(3){
+				width: 7.73%;
+				height: 4.04%;
+				position: absolute;
+				top: 12%;
+				left: 35%;
+				animation: drop3 8s infinite;
+				animation-delay: 1s;
+				animation-timing-function: linear;
+				opacity: 0;
+			}
+			.leaves li:nth-of-type(3) img{
+				width: 100%;
+				height: 100%;
+			}
+			@keyframes drop3{
+				0%{top: 12%; left:35%;opacity: 0;transform: scale(0);}
+				10%{top: 20%;left: 40%;opacity: 1;}
+				20%{top: 25%;left: 45%;transform: scale(1);}
+				30%{top: 30%;left: 42%;}
+				40%{top: 35% ;left: 38%;}
+				50%{top: 40%;left: 45%;}
+				60%{top: 45%;left: 42%;}
+				70%{top:50% ;left: 48%;}
+				80%{top:55% ;left:44% ;}
+				90%{top:60% ;left: 46%;}
+				100%{top: 65%;left: 45%;opacity: 0;}
+			}
+			.leaves li:nth-of-type(4){
+				width: 7.73%;
+				height: 4.04%;
+				position: absolute;
+				top: 12%;
+				left: 35%;
+				animation: drop4 8s infinite;
+				animation-delay: 6s;
+				animation-timing-function: linear;
+				opacity: 0;
+			}
+			.leaves li:nth-of-type(4) img{
+				width: 100%;
+				height: 100%;
+			}
+			@keyframes drop4{
+				0%{top: 12%; left:50%;opacity: 0;transform: scale(0);}
+				10%{top: 20%;left: 45%;opacity: 1;}
+				20%{top: 25%;left: 50%;transform: scale(1);}
+				30%{top: 30%;left: 55%;}
+				40%{top: 35% ;left: 50%;}
+				50%{top: 40%;left: 45%;}
+				60%{top: 45%;left: 50%;}
+				70%{top:50% ;left: 55%;}
+				80%{top:55% ;left:52% ;}
+				90%{top:60% ;left: 46%;opacity: 0;}
+				100%{top: 65%;left: 49%;}
+			}
+			.leaves li:nth-of-type(5){
+				width: 7.73%;
+				height: 4.04%;
+				position: absolute;
+				top: 18%;
+				left: 60%;
+				animation: drop5 8s;
+				animation-timing-function: linear;
+				opacity: 0;
+			}
+			.leaves li:nth-of-type(5) img{
+				width: 100%;
+				height: 100%;
+			}
+			@keyframes drop5{
+				0%{top: 12%; left:65%;opacity: 0;transform: scale(0);}
+				10%{top: 20%;left: 70%;opacity: 1;}
+				20%{top: 25%;left: 75%;transform: scale(1);}
+				30%{top: 30%;left: 70%;}
+				40%{top: 35% ;left: 65%;}
+				50%{top: 40%;left: 70%;opacity: 1;}
+				60%{top: 45%;left: 65%;}
+				70%{top:50% ;left: 70%;}
+				80%{top:55% ;left:75% ;opacity: 0;}
+				90%{top:60% ;left: 70%;}
+				100%{top: 65%;left:65%;}
+			}
+			.leaves li:nth-of-type(6){
+				width: 7.73%;
+				height: 4.04%;
+				position: absolute;
+				top: 18%;
+				left: 80%;
+				animation: drop6 8s infinite;
+				animation-delay: 6s;
+				animation-timing-function: linear;
+				opacity: 0;
+			}
+			.leaves li:nth-of-type(6) img{
+				width: 100%;
+				height: 100%;
+			}
+			@keyframes drop6{
+				0%{top: 12%; left:75%;opacity: 0;transform: scale(0);}
+				10%{top: 20%;left: 80%;opacity: 1;}
+				20%{top: 25%;left: 75%;transform: scale(1);}
+				30%{top: 30%;left:70%;}
+				40%{top: 35% ;left: 75%;}
+				50%{top: 40%;left: 80%;}
+				60%{top: 45%;left: 75%;}
+				70%{top:50% ;left: 70%;}
+				80%{top:55% ;left:74% ;}
+				90%{top:60% ;left: 70%;}
+				100%{top: 65%;left:76%;opacity: 0;}
+			}
+			
+			.leftBorder{
+				width: 31.3%;
+				height: 11.7%;
+				position: absolute;
+				top: 27.36%;
+				left: -31.3%;
+				background: url(../images/page1/leftborder.png) no-repeat;
+				background-position:127% 24%;
+				background-size: 200% 200%;
+				animation: borderInLeft 2s forwards;
+			}
+			@keyframes borderInLeft{
+				0%{
+					left: -31.3%;
+				}
+				100%{
+					left: 0;
+				}
+			}
+			.rightBorder{
+				width: 31.3%;
+				height: 11.7%;
+				position: absolute;
+				top: 13.7%;
+				right: -31.3%;
+				background: url(../images/page1/rightborder.png) no-repeat;
+				background-position:-10% -1%;
+				background-size: 200% 200%;
+				animation: borderInRight 2s forwards;
+			}
+			@keyframes borderInRight{
+				0%{
+					right: -31.3%;
+				}
+				100%{
+					right: 0;
+				}
+			}
+			
+			.word_one{
+				width: 37.6%;
+				height: 8.84%;
+				position: absolute;
+				top: 14.24%;
+				left:20%;
+				overflow: hidden;
+			}
+			.word1{
+				width: 100%;
+				height:100%;
+				animation: wordRightIn 2s forwards;
+				position: absolute;
+				right: -100%;
+			}
+			@keyframes wordRightIn{
+				0%{
+					right: -100%;
+				}
+				100%{
+					right: 0%;
+				}
+			}
+			.word1 li{
+				float: left;
+				width: 25%;
+				height: 100%;
+			}
+			.word1 li:nth-of-type(1){
+				width: 25%;
+				height: 80%;
+				margin-top: 8%;
+			}
+			.word1 li:nth-of-type(3){
+				width: 25%;
+				height: 60%;
+				margin-top: 15%;
+			}
+			.word1 li:nth-of-type(4){
+				width: 25%;
+				height: 70%;
+				margin-top: 10%;
+			}
+			.word1 li img{
+				width: 100%;
+				height: 100%;
+			}
+			.word1:after{
+				clear: both;
+			}
+			.word_two{
+				width: 42.53%;
+				height: 8.02%;
+				float: left;
+				position: absolute;
+				top: 23.23%;
+				left:19.06%;
+				overflow: hidden;
+			}
+			.word2{
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				left: -100%;
+				animation: wordLeftIn 2s forwards;
+			}
+			@keyframes wordLeftIn{
+				0%{
+					left: -100%;
+				}
+				100%{
+					left: 0%;
+				}
+			}
+			.word2 li{
+				width: 33.3%;
+				height: 100%;
+				float: left;
+			}
+			.word2 li img{
+				width: 100%;
+				height: 100%;
+			}
+			.word3{
+				width: 20.26%;
+				height: 5.7%;
+				position: absolute;
+				top: 16.64%;
+				left:58.26% ;
+				border-left: 1px solid #71ac20;
+				overflow: hidden;
+			}
+			.englishWord{
+				width: 80%;
+				height: 80%;
+				position: absolute;
+				top: 10%;
+				left: -100%;
+				animation: engWordIn 2s forwards;
+			}
+			@keyframes engWordIn{
+				0%{
+					left: -100%;
+				}
+				100%{
+					left: 10%;
+				}
+			}
+			.englishWord img{
+				width: 100%;
+				height: 100%;
+			}
+			.word4{
+				width: 28.9%;
+				height:16.94%;
+				position: absolute;
+				top: -17%;
+				left: 60%;
+				animation: wordDrop 2s forwards;
+				animation-timing-function: ease-in;
+				animation-delay: 2s ;
+			}
+			@keyframes wordDrop{
+				0%{
+					top:-17%;
+				}
+				60%{
+					top: 22.56%;
+				}
+				70%{
+					top: 16.56%;
+				}
+				80%{
+					top: 22.56%;
+				}
+				90%{
+					top: 18.56%;
+				}
+				95%{
+					top: 22.56%;
+				}
+				97%{
+					top: 20.56%;
+				}
+				100%{
+					top: 22.56%;
+				}
+			}
+			.word4 img{
+				width: 100%;
+				height: 100%;
+			}
+			
+			.word5{
+				width: 100%;
+				height: 2.4%;
+				float: left;
+				position: absolute;
+				top: 46.15%;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-around;
+				align-items: center;
+			}
+			.right{
+				width: 26%;
+				height: 40.62%;
+				background: url(../images/page1/leftborder2.png) no-repeat;
+				background-size: 100% 100%;
+			}
+			.wordText{
+				width: 38.27%;
+				height:100% ;
+				background: url(../images/page1/word5.png) no-repeat;
+				background-size: 100% 100%;
+			}
+			.left{
+				width: 26%;
+				height: 40.62%;
+				background: url(../images/page1/rightborder2.png) no-repeat;
+				background-size: 100% 100%;
+			}
+			.main_bg{
+				width: 100%;
+				height: 42.13%;
+				position: absolute;
+				top: 49.25%;
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+				animation: main_bg 2s forwards;
+			}
+			@keyframes main_bg{
+				0%{
+					transform: scale(0) ;
+				}
+				95%{
+					transform: scale(1.2) 
+				}
+				100%{
+					transform: scale(1) ;
+				}
+			}
+			.main_bg img{
+				width: 97.6%;
+				height: 100%;
+				
+			}
+			.water{
+				width: 100%;
+				height: 15.22%;
+				position: absolute;
+				bottom: 0%;
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+			}
+			.water img{
+				width: 100%;
+				height: 100%;
+			}
+			.red_logo{
+				width: 6.13%;
+				height: 5.09%;
+				position:absolute;
+				top:24.9%;
+				left: -7%;
+				animation: redLogoIn 2s forwards;
+				animation-delay: 2s;
+			}
+			@keyframes redLogoIn{
+				0%{
+					left:-7 ;
+				}
+				100%{
+					left:10.67% ;
+				}
+			}
+			.red_logo img{
+				width: 100%;
+				height: 100%;
+			}

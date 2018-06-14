@@ -1,0 +1,134 @@
+.lessonDis{
+	width: 25.2%;
+	height: 3.6%;
+	position: absolute;
+	top: 16.5%;
+	right: 17.2%;
+}
+.lessonDis img {
+	width: 100%;
+	height: 100%;
+}
+.lessonDiscrible{
+	width: 67.73%;
+	height: 20.39%;
+	position: absolute;
+	top: 35.5%;
+	left: 16%;
+	overflow: hidden;
+	animation: schoolAni 1.5s forwards;
+	animation-delay: ;
+	z-index: 5;
+	opacity: 0.8;
+}
+.lessLeft{
+	width: 48.03%;
+	height: 100%;
+	float: left;
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+}
+.lessLeft img{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	right: -100%;
+	animation: lessLeftIn 1s forwards;
+	animation-delay:1.5s ;
+}
+@keyframes lessLeftIn{
+	0%{
+		right: -100%;
+	}
+	100%{
+		right:0%;
+	}
+}
+.lessright{
+	width: 51.96%;
+	height: 100%;
+	float: left;
+	overflow: hidden;
+	position: absolute;
+	right: 0;
+}
+.lessright img{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: -100%;
+	animation: lessrightIn 1s forwards;
+	animation-delay:1.5s ;
+}
+@keyframes lessrightIn{
+	0%{
+		left: -100%;
+	}
+	100%{
+		left:0%;
+	}
+}
+
+.PHPlogo{
+	width: 20%;
+	height: 13.5%;
+	position: absolute;
+	top: 61.1%;
+	right: -20%;
+	background: url(../images/page4/PHP.png) no-repeat;
+	background-size: 100% 100%;
+	animation: PHPLogIn 1s forwards;
+	animation-delay: 1.5s;
+}
+@keyframes PHPLogIn{
+	0%{
+		right: -20%;
+	}
+	100%{
+		right: 16.13%;
+	}
+}
+.UIlogo{
+	width: 18.27%;
+	height: 13.5%;
+	position: absolute;
+	top: 46.1%;
+	left: 40.8%;
+	opacity: 0;
+	background: url(../images/page4/UI.png) no-repeat;
+	background-size: 100% 100%;
+	animation: UILogIn 1s forwards;
+	animation-delay: 1s;
+}
+@keyframes UILogIn{
+	0%{
+		top: 46.1%;
+		opacity: 0;
+	}
+	100%{
+		top: 61.1%;
+		opacity: 1;
+	}
+}
+
+.WEBlogo{
+	width: 18.13%;
+	height: 13.5%;
+	position: absolute;
+	top: 61.1%;
+	left:-20%;
+	background: url(../images/page4/WEB.png) no-repeat;
+	background-size: 100% 100%;
+	animation: WEBLogIn 1s forwards;
+	animation-delay: 1.5s;
+}
+@keyframes WEBLogIn{
+	0%{
+		left:-20%;
+	}
+	100%{
+		left:16%;
+	}
+}
+

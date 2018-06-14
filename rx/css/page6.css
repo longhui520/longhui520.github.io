@@ -1,0 +1,216 @@
+.staffDis{
+	width: 25.2%;
+	height: 3.6%;
+	position: absolute;
+	top: 16.5%;
+	right: 17.2%;
+}
+.staffDis img {
+	width: 100%;
+	height: 100%;
+}
+.staffBlessing{
+	width:62% ;
+	height: 23.69%;
+	position: absolute;
+	top: 41%;
+	left: 20.26%;
+	opacity: 0.8;
+	z-index: 5;
+	overflow: hidden;
+}
+.staffWord{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.staffWord li img{
+	width: 100%;
+	height: 100%;
+}
+.staffWord li:nth-of-type(1){
+	width: 100%;
+	height: 20%;
+	position: absolute;
+	top: 0;
+	left:-100% ;
+	animation: staffLiIn 1s forwards;
+	animation-timing-function: ease-out;
+	animation-delay:1s;
+}
+@keyframes staffLiIn{
+	0%{
+		left: -100%;
+	}
+	100%{
+		left:0;
+	}
+}
+@keyframes staffLiIn2{
+	0%{
+		right: -100%;
+	}
+	100%{
+		right:0;
+	}
+}
+.staffWord li:nth-of-type(2){
+	width: 100%;
+	height: 20%;
+	position: absolute;
+	top: 20%;
+	right:-100% ; ;
+	animation: staffLiIn2 1s forwards;
+	animation-timing-function: ease-out;
+	animation-delay: 1.2s;
+}
+.staffWord li:nth-of-type(3){
+	width: 100%;
+	height: 20%;
+	position: absolute;
+	top: 40%;
+	left:-100% ;
+	animation: staffLiIn 1s forwards;
+	animation-timing-function: ease-out;
+	animation-delay: 1.4s;
+}
+.staffWord li:nth-of-type(4){
+	width: 100%;
+	height: 20%;
+	position: absolute;
+	top: 60%;
+	right:-100% ;
+	animation: staffLiIn2 1s forwards;
+	animation-timing-function: ease-out;
+	animation-delay: 1.6s;
+}
+.staffWord li:nth-of-type(5){
+	width: 100%;
+	height: 20%;
+	position: absolute;
+	top: 80%;
+	left:-100% ;
+	animation: staffLiIn 1s forwards;
+	animation-timing-function: ease-out;
+	animation-delay:1.7s;
+}
+
+.baiZhong{
+	width: 21.5%;
+	height: 22.6%;
+	background: url(../images/page6/baiZhong.png) no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	top: 0%;
+	left: 20.8%;
+	animation: baidong 3s infinite;
+	animation-timing-function: ease-out;
+	transform-origin: top;
+}
+@keyframes baidong{
+	0%{
+		transform: rotateZ(0deg);
+	}
+	25%{
+		transform: rotateZ(6deg);
+	}
+	50%{
+		transform: rotateZ(0deg);
+	}
+	75%{
+		transform: rotateZ(-6deg);
+	}
+	100%{
+		transform: rotateZ(0deg);
+	}
+}
+.panZhong{
+	width: 21.46%;
+	height: 12%;
+	position: absolute;
+	right: 15.33%;
+	top: 31%;
+	background: url(../images/page6/panZhong.png) no-repeat;
+	background-size: 100% 100%;
+	animation: panzhong 2s infinite;
+	z-index: 6;
+}
+@keyframes panzhong{
+	0%{
+		transform:translateY(0%) ;
+		width: 21.46%;
+		height: 12%;
+	}
+	50%{
+		transform: translateY(-15%) ;
+		width: 20.46%;
+		height: 13%;
+	}
+	100%{
+		transform: translateY(0%);
+		width: 21.46%;
+		height: 12%;
+	}
+}
+.yeZhong{
+	width: 20.93%;
+	height: 14.76%;
+	background: url(../images/page6/yeZhong.png) no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	top: 62.52%;
+	left: 11.47%;
+	transform: rotateZ(-20deg);
+}
+.doubleyeZhong{
+	width: 33.07%;
+	height: 12%;
+	background: url(../images/page6/yeDoubleZHong.png) no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	bottom: 21.14%;
+	right: 8%;
+}
+.luoZhong{
+	width: 33.6%;
+	height: 14.99%;
+	background: url(../images/page6/luoZhong.png) no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	bottom: -10%;
+	left: 16.53%;
+	animation: luozhong 6s infinite;
+	animation-timing-function: linear;
+}
+@keyframes luozhong{
+	0%{
+		bottom: -10%;
+		left: 16.53%;
+	}
+	40%{
+		bottom: -10%;
+		left: 15.53%;
+	}
+	54%{
+		bottom: 6.1%;
+	    left: 27.53%;
+	    transform: rotate(15deg);
+	}
+	56%{
+		bottom: 6.1%;
+	    left: 29.53%;
+	    transform: rotate(30deg);
+	}
+	70%{
+		bottom: -10%;
+	    left: 40.53%;
+	    transform: rotate(30deg);
+	}
+	100%{
+		bottom: -10%;
+	    left: 50.53%;
+	    transform: rotate(30deg);
+	}
+}

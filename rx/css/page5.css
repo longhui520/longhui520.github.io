@@ -1,0 +1,296 @@
+.leadDis{
+	width: 25.2%;
+	height: 3.6%;
+	position: absolute;
+	top: 16.5%;
+	right: 17.2%;
+}
+.leadDis img {
+	width: 100%;
+	height: 100%;
+}
+.leadPhoto{
+	width: 38.13%;
+	height: 21.5%;
+	position: absolute;
+	top: 29.7%;
+	left: 30.93%;
+	background: url(../images/page5/photo.png) no-repeat;
+	background-size: 100% 100%;
+	animation: leadPhotoIn 1s forwards;
+	animation-delay: 0.5s;
+	opacity: 0;
+	z-index: 10;
+}
+@keyframes leadPhotoIn{
+	0%{
+		transform: scale(0);
+		opacity: 0;
+	}
+	100%{
+		transform: scale(1);
+		opacity: 0.8;
+	}
+}
+.leadBlessing{
+	width: 56.8%;
+	height: 21%;
+	position: absolute;
+	top: 54.9%;
+	left: 22.67%;
+	overflow: hidden;
+	z-index: 5;
+	opacity: 0.8;
+}
+.leadBlessUl{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.leadBlessUl li:nth-of-type(1){
+	width: 100%;
+	height: 16.67%;
+	animation: leadoneIn 1s forwards;
+	animation-delay: 0.5s;
+	position: absolute;
+	top: -16%;
+	left: 0;
+	opacity: 0;
+}
+@keyframes leadoneIn{
+	0%{
+		top: -16%;
+		opacity: 0;
+	}
+	100%{
+		top: 0%;
+		opacity: 1;
+	}
+}
+.leadBlessUl li:nth-of-type(1) img{
+	width: 100%;
+	height: 100%;
+}
+.leadBlessUl li:nth-of-type(2){
+	width: 100%;
+	height: 16.67%;
+	position: absolute;
+	top: 16.67%;
+	left: 0;
+}
+.liLeft2{
+	float: left;
+	width: 48.12%;
+	height: 100%;
+	position: absolute;
+	left: -48%;
+	opacity: 0;
+	animation: leadLeftIn 1s forwards;
+	animation-delay: 0.8s;
+}
+@keyframes leadLeftIn{
+	0%{
+		left: -48%;
+		opacity: 0;
+	}
+	100%{
+		left: 0%;
+		opacity: 1;
+	}
+}
+.liLeft2 img{
+	width: 100%;
+	height: 100%;
+}
+.liRight2{
+	float: left;
+	width: 51.64%;
+	height: 100%;
+	position: absolute;
+	right: -53%;
+	animation: leadRightIn 1s forwards;
+	animation-delay: 0.8s;
+}
+@keyframes leadRightIn{
+	0%{
+		right: -53%;
+		opacity: 0;
+	}
+	100%{
+		right: 0%;
+		opacity: 1;
+	}
+}
+.liRight2 img{
+	width: 100%;
+	height: 100%;
+}
+.leadBlessUl li:nth-of-type(3){
+	width: 100%;
+	height: 16.67%;
+	position: absolute;
+	top: 33.34%;
+	left: 0;
+}
+.liLeft3{
+	float: left;
+	width: 48.12%;
+	height: 100%;
+	position: absolute;
+	left: -48%;
+	opacity: 0;
+	animation: leadLeftIn 1s forwards;
+	animation-delay: 1s;
+}
+
+.liLeft3 img{
+	width: 100%;
+	height: 100%;
+}
+.liRight3{
+	float: left;
+	width: 51.64%;
+	height: 100%;
+	position: absolute;
+	right: -53%;
+	animation: leadRightIn 1s forwards;
+	animation-delay: 1s;
+}
+
+.liRight3 img{
+	width: 100%;
+	height: 100%;
+}
+
+
+.leadBlessUl li:nth-of-type(4){
+	width: 100%;
+	height: 16.67%;
+	position: absolute;
+	top: 49.97%;
+	left: 0;
+}
+.liLeft4{
+	float: left;
+	width: 48.12%;
+	height: 100%;
+	position: absolute;
+	left: -48%;
+	opacity: 0;
+	animation: leadLeftIn 1s forwards;
+	animation-delay: 1.2s;
+}
+
+.liLeft4 img{
+	width: 100%;
+	height: 100%;
+}
+.liRight4{
+	float: left;
+	width: 51.64%;
+	height: 100%;
+	position: absolute;
+	right: -53%;
+	animation: leadRightIn 1s forwards;
+	animation-delay: 1.2s;
+}
+
+.liRight4 img{
+	width: 100%;
+	height: 100%;
+}
+
+
+.leadBlessUl li:nth-of-type(5){
+	width: 100%;
+	height: 16.67%;
+	position: absolute;
+	top:  66.64%;
+	left: 0;
+}
+.liLeft5{
+	float: left;
+	width: 48.12%;
+	height: 100%;
+	position: absolute;
+	left: -48%;
+	opacity: 0;
+	animation: leadLeftIn 1s forwards;
+	animation-delay: 1.4s;
+}
+
+.liLeft5 img{
+	width: 100%;
+	height: 100%;
+}
+.liRight5{
+	float: left;
+	width: 51.64%;
+	height: 100%;
+	position: absolute;
+	right: -53%;
+	animation: leadRightIn 1s forwards;
+	animation-delay: 1.4s;
+}
+
+.liRight5 img{
+	width: 100%;
+	height: 100%;
+}
+.leadBlessUl li:nth-of-type(6){
+	width: 100%;
+	height: 16.67%;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	opacity: 0;
+	animation: leadsixIn 1s forwards;
+	animation-delay: 1.6s;
+}
+@keyframes leadsixIn{
+	0%{
+		top: 100%;
+		opacity: 0;
+	}
+	100%{
+		top: 83.31%;
+		opacity: 1;
+	}
+}
+.leadBlessUl li:nth-of-type(6) img{
+	width: 100%;
+	height: 100%;
+}
+
+.doubleZhong{
+	width: 44.8%;
+	height: 15.37%;
+	position: absolute;
+	left: 27.87%;
+	bottom: 8.5%;
+	opacity: 0;
+	background: url(../images/page5/jumpZ.png) no-repeat;
+	background-size: 100% 100%;
+	animation: duobleZhongIn 3s forwards;
+	animation-timing-function: linear;
+	animation-delay: 2s;
+}
+@keyframes duobleZhongIn{
+	0%{left: 0%;transform: scale(0) rotate(10deg);opacity: 0;}
+	10%{transform: scale(0.1) rotate(-10deg);}
+	20%{transform: scale(0.2) rotate(10deg);}
+	30%{transform: scale(0.3) rotate(-10deg);}
+	40%{transform: scale(0.4) rotate(10deg);}
+	50%{transform: scale(0.5) rotate(-10deg);}
+	60%{transform: scale(0.6) rotate(10deg);}
+	70%{transform: scale(0.7) rotate(-10deg);}
+	80%{transform: scale(0.8) rotate(10deg);}
+	90%{transform: scale(0.9) rotate(-10deg);}
+	100%{left: 27.87%;transform: scale(1) rotate(0deg);;opacity: 1;}
+}
+
+
+
+
