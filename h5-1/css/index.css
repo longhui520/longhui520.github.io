@@ -113,9 +113,22 @@ img.start{
     opacity: 0;
 }
 
-.section:not(:first-child).now {
+.section:not(:first-child).active {
     animation: section 0.2s ease forwards;
     transform-origin: bottom;
+}
+.section.leave {
+    animation: section 0.2s ease forwards;
+    transform-origin: bottom;
+}
+@keyframes leave {
+    0% {
+        transform: translateY(0%) scale(1);
+        
+    }
+    100% {
+        transform: translate(-100%) scale(0);
+    }
 }
 @keyframes section{
     0%{
@@ -465,28 +478,28 @@ img.start{
 
 
 /* 第一屏动画 */
-.section1.now .right {
+.section1.active .right {
     animation: right 1.5s 0.5s linear forwards;
 }
-.section1.now .left {
+.section1.active .left {
     animation: left 1.5s 0.5s linear forwards;
 }
-.section1.now .family {
+.section1.active .family {
     animation: family 1.5s 0.5s linear forwards;
 }
-.section1.now .zong{
+.section1.active .zong{
     animation: zong 3s 0.5s linear forwards;
 }
-.section1.now .biaoyu{
+.section1.active .biaoyu{
     animation: biaoyu 1.5s 0.5s linear forwards ;
 }
-.section1.now .smd {
+.section1.active .smd {
     animation: smd 1.5s 0.5s linear forwards;
 }
-.section1.now .shuxian{
+.section1.active .shuxian{
    animation: shuxian 1s 0.5s linear forwards;
 }
-.section1.now .smdzf{
+.section1.active .smdzf{
     animation: smdzf 1.5s 0.7s linear forwards;
 }
 
@@ -612,28 +625,28 @@ img.start{
     }
 }
 
-.now .jieshao{
+.active .jieshao{
     animation: jieshao 2s 0.5s linear forwards;
 }
-.now .smd{
+.active .smd{
     animation: smd 6s 0.5s linear forwards;
 }
-.now .right {
+.active .right {
     animation: right 1.5s  0.5s linear forwards;
 }
-.now .left {
+.active .left {
     animation: left 1.5s  0.5s linear forwards;
 }
-.now .wuyuewu{
+.active .wuyuewu{
   animation: wuyuewu 1.5s  0.5s linear forwards;
 }
-.section2.now .duanwu{
+.section2.active .duanwu{
     animation: duanwu 1.5s 0.5s linear forwards;
 }
-.section.now .xian {
+.section.active .xian {
     animation: xian 1.5s .5s linear forwards;
 }
-.section.now .tian {
+.section.active .tian {
     animation: tian 1.5s .5s linear forwards;
 }
 /* 第三屏 */
@@ -743,13 +756,13 @@ img.start{
         bottom:23.24% ; 
     }
 }
-.section3.now .xuexiao {
+.section3.active .xuexiao {
     animation: xuexiao 1s 0.5s linear forwards;
 }
-.section3.now .x1 {
+.section3.active .x1 {
     animation:x1 1s 1.5s linear forwards;
 }
-.section3.now .x2 {
+.section3.active .x2 {
     animation:x2 1s 0.5s linear forwards;
 }
 
@@ -885,19 +898,19 @@ img.start{
         transform: rotateX(0deg);
     }
 }
-.section4.now .web {
+.section4.active .web {
     animation:  web 1s  0.5s ease forwards;
 }
-.section4.now .ui {
+.section4.active .ui {
     animation:  ui 0.7s 1.5s ease forwards;
 }
-.section4.now .php {
+.section4.active .php {
     animation:  php 0.3s 2.2s ease forwards;
 }
-.section4.now .web-1,.section4.now .ui-1,.section4.now .php-1{
+.section4.active .web-1,.section4.active .ui-1,.section4.active .php-1{
     animation: op 0.5s 2.5s ease forwards;
 }
-.section4.now .kecheng {
+.section4.active .kecheng {
     animation: kecheng 2s 1s ease forwards;
 }
 /* 第五屏 */
@@ -982,10 +995,10 @@ img.start{
         transform: rotateY(0deg);
     }
 }
-.section5.now .lingdao{
+.section5.active .lingdao{
     animation: lingdao 2s 0.5s linear forwards;
 }
-.section5.now .xiaozhang {
+.section5.active .xiaozhang {
     animation: xiaozhang 2s 0.5s linear forwards;
 }
 /*  第六屏 */
@@ -1127,22 +1140,22 @@ img.start{
         bottom: 6.7%;
     }
 }
-.section6.now .y1{
+.section6.active .y1{
     animation: y1 2s linear forwards;
 }
-.section6.now .y2{
+.section6.active .y2{
     animation: y2 2s linear forwards;
 }
-.section6.now .y3{
+.section6.active .y3{
     animation: y3 2s linear forwards;
 }
-.section6.now .y4{
+.section6.active .y4{
     animation: y4 2s linear forwards;
 }
-.section6.now .y5{
+.section6.active .y5{
     animation: y5 2s linear forwards;
 }
-.section6.now .yuangong{
+.section6.active .yuangong{
     animation: yuangong 2s 0.5s linear forwards;
 }
 /* 第七屏 */
@@ -1288,21 +1301,21 @@ img.start{
         transform: rotate(360deg) scale(1)
     }
 }
-.section7.now .w1 {
+.section7.active .w1 {
     animation: w1 2s 0.5s linear forwards;
 }
-.section7.now .w2 {
+.section7.active .w2 {
     animation: w2 2s  0.5s linear forwards;
 }
-.section7.now .w3 {
+.section7.active .w3 {
     animation: w3 2s 0.5s linear forwards;
 }
-.section7.now .w4 {
+.section7.active .w4 {
     animation: w4 2s 0.5s linear forwards;
 }
-.section7.now .w5 {
+.section7.active .w5 {
     animation: w5 2s 0.5s linear forwards;
 }
-.section.now .erweima {
+.section.active .erweima {
     animation:  erweima  1s 0.5s linear forwards;
 }
