@@ -114,7 +114,7 @@ img.start{
 }
 
 .section:not(:first-child).now {
-    animation: section 0.4s ease forwards;
+    animation: section 0.2s ease forwards;
     transform-origin: bottom;
 }
 @keyframes section{
