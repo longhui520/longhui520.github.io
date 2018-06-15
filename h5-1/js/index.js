@@ -1,7 +1,7 @@
 $(function(){
     $('#fullpage').fullpage({
         verticalCentered: false,
-        navigation:true,
+        navigation:false,
         afterLoad:function(link,index){
             $('.section').eq(index-1).addClass('now')
         },
