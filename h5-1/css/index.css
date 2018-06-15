@@ -27,6 +27,7 @@ img.music {
     width: 9.33333%;
     height:5.247%;
     animation: music 3s linear infinite;
+    cursor: pointer;
 }
 img.logo {
     position:fixed;
