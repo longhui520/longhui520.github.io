@@ -62,3 +62,22 @@
 	width: 100%;
 	height: 100%;
 }
+
+.diaoZhong{
+	width: 9.07%;
+	height: 8.1%;
+	position: absolute;
+	top: 30.5%;
+	left: -18%;
+	background: url(../images/page7/diaoZhong.png) no-repeat;
+	background-size: 100% 100%;
+	animation: diaoZhongIn 2s forwards;
+}
+@keyframes diaoZhongIn{
+	0%{
+		left: -18%;
+	}
+	100%{
+		left: 12.4%;
+	}
+}
