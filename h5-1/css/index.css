@@ -86,11 +86,30 @@ img.start{
 }
 .leaves1{
     position: absolute;
-    top:15.74%;
-    right: 14.67%;
+    top:1%;
+    left: 4%;
     width: 6%;
     height: 7.87%;
     z-index: 101;
+    opacity: 0;
+}
+.leaves2{
+    position: absolute;
+    top:1%;
+    left: 2%;
+    width: 8.4%;
+    height: 2.7%;
+    z-index: 101; 
+    opacity: 0;
+}
+.leaves3{
+    position: absolute;
+    top:1%;
+    left: 3%;
+    width: 8%;
+    height: 2.4%;
+    z-index: 101; 
+    opacity: 0;
 }
 
 .section:not(:first-child).now {
@@ -109,28 +128,160 @@ img.start{
 }
 @keyframes leaves1 {
     0% {
-        top:15.74%;
-        right: 14.667%;
-        opacity: 1;
+        top:1%;
+        left: 4%;
+        opacity: 0;
+    }
+    10% {
+        top:4%;
+        left: 15%;
+       opacity: 1;
+    }
+    20% {
+        top:10%;
+        left: 30%;
     }
     30% {
-        top:37.48%;
-        right: 6rem;
+        top:20%;
+        left: 50%;
+    }
+    40% {
+        top: 30%;
+        left: 70%;
+    }
+    50% {
+        top: 40%;
+        left:85%;
     }
     60% {
-        top:59.997%;
-        right: 26.67%;
+        top: 50%;
+        left: 65%;
+    }
+    70% {
+        top: 60%;
+        left: 45%;
+    }
+    80% {
+        top: 70%;
+        left: 30%;
+    }
+    90% {
+        top: 80%;
+        left: 10%;
     }
     100% {
-        top:89.95%;
-        right: 66.67%;
+        top:90%;
+        left: 0%;
+        opacity: 0;
+    }
+}
+@keyframes leaves2 {
+    0% {
+        top:1%;
+        left: 4%;
+        opacity: 0;
+    }
+    10% {
+        top:4%;
+        left: 10%;
+       opacity: 1;
+    }
+    20% {
+        top:10%;
+        left: 10%;
+    }
+    30% {
+        top:20%;
+        left: 20%;
+    }
+    40% {
+        top: 30%;
+        left: 35%;
+    }
+    50% {
+        top: 40%;
+        left:55%;
+    }
+    60% {
+        top: 50%;
+        left: 70%;
+    }
+    70% {
+        top: 60%;
+        left: 40%;
+    }
+    80% {
+        top: 70%;
+        left:60%;
+    }
+    90% {
+        top: 80%;
+        left: 80%;
+    }
+    100% {
+        top:90%;
+        left: 100%;
+        opacity: 0;
+    }
+}
+@keyframes leaves3 {
+    0% {
+        top:1%;
+        left: 4%;
+        opacity: 0;
+    }
+    10% {
+        top:4%;
+        left: 15%;
+       opacity: 1;
+    }
+    20% {
+        top:10%;
+        left: 30%;
+    }
+    30% {
+        top:20%;
+        left: 30%;
+    }
+    40% {
+        top: 30%;
+        left: 40%;
+    }
+    50% {
+        top: 40%;
+        left:40%;
+    }
+    60% {
+        top: 50%;
+        left: 40%;
+    }
+    70% {
+        top: 60%;
+        left: 45%;
+    }
+    80% {
+        top: 70%;
+        left:35%;
+    }
+    90% {
+        top: 80%;
+        left: 30%;
+    }
+    100% {
+        top:90%;
+        left: 25%;
         opacity: 0;
     }
 }
 .leaves1 {
-    animation: leaves1 10s linear infinite;
+    animation: leaves1 20s linear infinite;
 }
-
+.leaves2 {
+    animation: leaves2 20s 10s linear infinite;
+}
+.leaves3 {
+    animation: leaves3 20s 15s linear infinite;
+}
 /* 第一屏 */
 .section1 .right {
     position: absolute;
@@ -401,14 +552,16 @@ img.start{
     position: absolute;
     width: 18.67%;
     height:9.82% ;
-    left: 20%;
+    /* left: 20%; */
+    left: -20%;
     bottom:15% ;
 }
 .section2 .xian{
     position: absolute;
     width: 18.67%;
     height:9.82% ;
-    left:33.33% ;
+    /* left:33.33% ; */
+    left: 100%;
     bottom:20% ;
 }
 /* 第二屏动画 */
@@ -441,6 +594,23 @@ img.start{
         opacity: 1;
     }
 }
+@keyframes xian {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: 33%;
+    }
+}
+@keyframes tian {
+    0% {
+        left: -20%;
+    }
+    100% {
+        left: 20%;
+    }
+}
+
 .now .jieshao{
     animation: jieshao 2s 0.5s linear forwards;
 }
@@ -458,6 +628,12 @@ img.start{
 }
 .section2.now .duanwu{
     animation: duanwu 1.5s 0.5s linear forwards;
+}
+.section.now .xian {
+    animation: xian 1.5s .5s linear forwards;
+}
+.section.now .tian {
+    animation: tian 1.5s .5s linear forwards;
 }
 /* 第三屏 */
 .section3 .right{
@@ -521,15 +697,19 @@ img.start{
     position: absolute;
     width:12.93% ;
     height:6.747% ;
-    left: 17.33%;
-    top: 20.24%;
+    /* left: 17.33%;
+    top: 20.24%; */
+    left: 40%;
+    top:-7%;
 }
 .section3 .x2{
     position: absolute;
     width: 16%;
     height: 6.9%;
-    left: 53.33%;
-    bottom:23.24% ;
+    /* left: 53.33%;
+    bottom:23.24% ; */
+    left: 40%;
+    bottom: 35%;
 }
 /* 第三屏动画 */
 @keyframes xuexiao {
@@ -542,10 +722,35 @@ img.start{
        opacity: 1;
     }
 }
+@keyframes x1 {
+    0%{
+        left: 40%;
+        top:-7%;
+    }
+    100% {
+        left: 17.33%;
+        top: 20.24%;
+    }
+}
+@keyframes x2 {
+    0% {
+        left: 40%;
+        bottom: 35%;
+    }
+    100% {
+        left: 53.33%;
+        bottom:23.24% ; 
+    }
+}
 .section3.now .xuexiao {
     animation: xuexiao 1s 0.5s linear forwards;
 }
-
+.section3.now .x1 {
+    animation:x1 1s 1.5s linear forwards;
+}
+.section3.now .x2 {
+    animation:x2 1s 0.5s linear forwards;
+}
 
 
 /* 第四屏 */
@@ -583,6 +788,7 @@ img.start{
     height: 19.56%;
     left: 16.93%;
     top:37.26%;
+    transform: rotateX(90deg);
 }
 .section4 .bolang {
     position: absolute;
@@ -626,6 +832,7 @@ img.start{
     width: 14.93%;
     height: 2.02%;
     bottom: 25.55%;
+    opacity: 0;
 }
 .section4 .web-1{
     left: 13.87%;
@@ -661,6 +868,22 @@ img.start{
         left: 65.47%;
     }
 }
+@keyframes op {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes kecheng {
+    0% {
+        transform: rotateX(90deg);
+    }
+    100% {
+        transform: rotateX(0deg);
+    }
+}
 .section4.now .web {
     animation:  web 1s  0.5s ease forwards;
 }
@@ -669,6 +892,12 @@ img.start{
 }
 .section4.now .php {
     animation:  php 0.3s 2.2s ease forwards;
+}
+.section4.now .web-1,.section4.now .ui-1,.section4.now .php-1{
+    animation: op 0.5s 2.5s ease forwards;
+}
+.section4.now .kecheng {
+    animation: kecheng 2s 1s ease forwards;
 }
 /* 第五屏 */
 .section5 .right{
@@ -726,6 +955,7 @@ img.start{
     height: 21.44%;
     left: 30.67%;
     top:29.23% ;
+    transform: rotateY(90deg);
 } 
 .section5 .l1 {
     position: absolute;
@@ -743,8 +973,19 @@ img.start{
         left: 22.67%;
     }
 }
+@keyframes xiaozhang {
+    0% {
+        transform: rotateY(90deg);
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+}
 .section5.now .lingdao{
     animation: lingdao 2s 0.5s linear forwards;
+}
+.section5.now .xiaozhang {
+    animation: xiaozhang 2s 0.5s linear forwards;
 }
 /*  第六屏 */
 .section6 .right{
@@ -803,34 +1044,39 @@ img.start{
     left: 19.47%;
     top: -23%;
 }
-.section .y2 {
+.section6 .y2 {
     position: absolute;
     width: 21.33%;
     height: 12%;
-    right: 10.67%;
+    /* right: 10.67%; */
+    right:-22%;
     top: 30%;
 }
-.section .y3 {
+.section6 .y3 {
     position: absolute;
     width: 20.93%;
     height: 14.77%;
-    left:10.67% ;
-    bottom:24%;
+    /* left:10.67% ; */
+    left:-20%;
+    bottom:23%;
 }
-.section .y4 {
+.section6 .y4 {
     position: absolute;
     width: 33.07%;
     height: 12%;
-    right: 9.33%;
+    /* right: 9.33%; */
+    right:-34%;
     bottom: 20.61%;
 }
-.section .y5 {
+.section6 .y5 {
     position: absolute;
     width: 34%;
     height: 15%;
     left: 28%;
-    bottom: 6.7%;
+    /* bottom: 6.7%; */
+    bottom:-17%;
 }
+
 /* 第六屏动画 */
 @keyframes yuangong{
     0%{
@@ -848,8 +1094,52 @@ img.start{
         top:0%;
     }
 }
+@keyframes y2 {
+    0%{
+        right:-22%;
+    }
+    100%{
+        right: 10.67%;
+    }
+}
+@keyframes y3 {
+    0%{
+        left:-20%;
+    }
+    100%{
+        left:10.67% ;
+    }
+}
+@keyframes y4 {
+    0%{
+        right:-34%;
+    }
+    100%{
+        right: 9.33%;
+    }
+}
+@keyframes y5 {
+    0%{
+        bottom:-17%;
+    }
+    100%{
+        bottom: 6.7%;
+    }
+}
 .section6.now .y1{
     animation: y1 2s linear forwards;
+}
+.section6.now .y2{
+    animation: y2 2s linear forwards;
+}
+.section6.now .y3{
+    animation: y3 2s linear forwards;
+}
+.section6.now .y4{
+    animation: y4 2s linear forwards;
+}
+.section6.now .y5{
+    animation: y5 2s linear forwards;
 }
 .section6.now .yuangong{
     animation: yuangong 2s 0.5s linear forwards;
@@ -889,6 +1179,7 @@ img.start{
     height:25.11%;
     left: 28%;
     top: 33.35%;
+    transform: rotate(0deg) scale(0);
 }
 .section7 .bolang {
     position: absolute;
@@ -988,6 +1279,14 @@ img.start{
         left: 15%;
     }
 }
+@keyframes erweima {
+    0%{
+        transform: rotate(0deg) scale(0);
+    }
+    100% {
+        transform: rotate(360deg) scale(1)
+    }
+}
 .section7.now .w1 {
     animation: w1 2s 0.5s linear forwards;
 }
@@ -1002,4 +1301,7 @@ img.start{
 }
 .section7.now .w5 {
     animation: w5 2s 0.5s linear forwards;
+}
+.section.now .erweima {
+    animation:  erweima  1s 0.5s linear forwards;
 }
