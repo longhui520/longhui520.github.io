@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ajax运用</title>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+</head>
+<body>
+    <script>
+        $(document).ajaxStart(function(event, request, settings){
+            console.log(event);
+            console.log(request);
+            console.log(settings);
+        });
+        function modifyAjax(old){
+            return function(url,options){
+                if(typeof(url) == "object"){
+                    options = url;
+                    url = undefined;
+                }
+                options = options || {};
+                
+            }
+        }
+        $.ajax({url:'www.baidu.com',beforeSend:function(xhr){
+            alert(111);
+        }});
+    </script>
+</body>
+</html>
