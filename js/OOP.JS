@@ -29,3 +29,33 @@ Function.prototype.uncurrying2 = function(){
         return Function.prototype.call.apply(_self,arguments);
     }
 }
+function aop(fn,options){
+    if(options === void 0){options = {}}
+    var after = options.after;
+    var before = options.before;
+    return function(){
+        var args = Array.prototype.slice.call(arguments);
+        var self = this;
+        if(before){
+            before.call.apply(before,[self].concat(args));
+        }
+        var ret = fn.call.apply(fn,[self].concat(args));
+        if(after){
+            after.call.apply(after,[self].concat(args,[ret]));
+        }
+        return ret;
+    }
+}
+var fn = aop(function(){
+    console.log(arguments);
+    return 1;
+},{
+    before:function(){
+        console.log(arguments);
+    },
+    after:function(){
+        console.log(arguments);
+    }
+}
+);
+fn(1,2,3,4);
