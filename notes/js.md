@@ -133,3 +133,182 @@
   - Number.MAX_VALUE Number.MIN_VALUE,Number.MAX_SAFE_INTEGER
   - 引入bigNumber库处理
   - 小数转整数后运算
+### 原型和原型链
+- 1. 理解原型设计模式以及JavaScript中的原型规则
+    任何对象(除了null)都是有原型对象
+    原型对象也有原型对象这样就形成了原型链
+    - prototype 是构造函数特有的属性
+    - __proto__ 是构造函数生成的实例时指向函数的prototype
+- 2. instanceof的底层实现原理，手动实现一个instanceof
+    - 判断实例对象的__propto__ 对象是否与 右边的prototype相等，如果不相等，在原型链上继续查找，直到原型对象为null
+    ```javascript
+        function instance_f(L,R){
+            var O = R.prototype;
+            var L = L.__prototype;
+            while(true){
+                if(L === null){
+                    return false;
+                }
+                if(L === O){
+                    return true;
+                }
+                L = L.__proto__;
+            }
+        }
+    ```
+- 3.  实现继承的几种方式
+    - 借用构造函数继承
+    ```javascript
+    function classA(color){
+        this.color = color;
+    }
+    function classB(color,name){
+        this.superClass = classA;
+        this.superClass(color);
+        delete this.superClass;
+        this.name = name;
+    }
+    function classC(color,name){
+        classA.call(this,color);
+        this.name = name;
+    }
+    ```
+    这种方式只能继承超类的实例属性，不能继承其原型属性
+    - 原型链继承
+    ``` javascript
+    function classA(){
+
+    }
+    classA.prototype.name = "小红"
+
+    function classB(){
+
+    }
+    classB.prototype = new classB();
+    ```
+    这种方式多个超类的实例属性是共享的
+- 组合继承：结合上面2种的继承
+    ```javascript
+    function classA(color){
+        this.color = color;
+    }
+    classA.prototype.say = function(){
+        console.log(this.color);
+    }
+    function classB(color,name){
+        classA.call(this,color)
+        this.name = name;
+    }
+    classB.prototype = new ClassA(color);
+    classB.prototyp.construct = classB;
+    classB.prototype.go = function(){
+        console.log(this.name)
+    }
+    ```
+    缺点是在原型链上有多余的实例属性
+- 原型式继承
+  ```javascript
+    function object(obj){
+        function F(){}
+        F.prototype = obj;
+        return new F();
+    }
+  ```
+  缺点是继承多个实例时，引用类型会共享，无法传参数
+- 寄生式继承
+  ```javascript
+     function createAnother(original){
+         var clone = object(origianl);
+         clone.say = function(){console.log(this)};
+         return clone;
+     }
+  ```
+    缺点同上，优点是增强了对象
+- 寄生组合式继承
+  ```javascript
+    function inheritPrototype(subType,superType){
+        var prototype = Object.create(superType.prototype);
+        prototype.construct = subType;
+        subType.prototype = prototype;
+    }
+    function superType(color){
+        this.color = color;
+    }
+    superType.prototype.say = function(){console.log(this)}
+    function subType(color,name){
+        superType.call(this,color);
+        this.name =name;
+    }
+    inheritPrototype(subtype,supertype);
+
+  ```
+- es6 extends 继承
+    ```javascript
+        class A{}
+        calss B extends A{
+            constructor(){
+                super();
+                 this.name = name;
+            }
+            
+        }
+    ```
+- 4. 至少说出一种开源项目(如Node)中应用原型继承的案例
+    使用了继承组合式继承
+
+- 5. 可以描述new一个对象的详细过程，手动实现一个new操作符
+    1. 创建一个新对象并且指向this
+    2. 给this 绑定实例属性
+    3. 返回this(当返回是对象时则返回这个对象，否则返回this);
+   ```javascript
+     function new2(fn,...args){
+         var obj = new Object();
+         fn.call(obj,...args);
+         return obj;
+     }
+   ```
+- 6. 理解es6 class构造以及继承的底层实现原理
+- [参考](https://blog.csdn.net/qq_34149805/article/details/86105123)   
+### 作用域和闭包
+- 1. 理解词法作用域和动态作用域
+    - js 函数的函数变量作用域是定义时决定是静态作用域(词法作用域);
+    - bash 函数式动态作用域,函数中的变量取决于执行的地方;
+- 2. 理解JavaScript的作用域和作用域链
+    - 函数的上下文是函数定义的地方的上下文
+    - 嵌套函数会继承外层函数的上下文，形成作用域链，
+    - 获取变量是由低到高查询，直到全局
+- 3. 理解JavaScript的执行上下文栈，可以应用堆栈信息快速定位问题
+    - 函数执行时会压进一个栈中，知道完全执行完后，从栈中退出；
+- 4. this的原理以及几种不同使用场景的取值
+    - 作为对象的方法时，this指向这个方法
+    - 最为普通函数时，指向顶级变量window global 或undefiend
+    - 
+    - 箭头函数指向上层函数的this
+    - call bind apply 等函数可以改变this的指向
+- 5. 闭包的实现原理和作用，可以列举几个开发中闭包的实际应用
+    - 内层函数用到了外层函数的变量时，并且外层函数执行完时，内层函数被引用时形成
+    - 使得函数有状态的变量用于 单例模式 ， 绑定一些特殊变量， 计时器，防抖等
+- 6. 理解堆栈溢出和内存泄漏的原理，如何防止
+    - 死循环，循环引用，等导致快速用于内存，
+    - 避免死循环和循环引用，即使置null，闭包函数使用完清理掉
+- 7. 如何处理循环的异步操作
+    - promise.all
+    - async await
+- 8. 理解模块化解决的实际问题，可列举几个模块化方案并理解其中原理
+    - 解决js代码复用，按需引用，
+    - commonjs amd cmd es6
+    - [参考](https://juejin.im/post/5c17ad756fb9a049ff4e0a62)
+### 执行机制
+- 1. 为何try里面放return，finally还会执行，理解其内部机制
+    - 会在return之前保存值，执行完finally后返回保存的值，如果finally有return 则直接返回此时的值
+- 2. JavaScript如何实现异步编程，可以详细描述EventLoop机制
+    - 回调和promise
+    - 代码解析执行脚本，执行同步代码 再执行宏任务，再执行微任务，执行宏任务，如此循环(js代码块也是宏任务);
+- 3. 宏任务和微任务分别有哪些
+    - 宏任务 3种定时器，整体代码script
+    - 微任务 promsie proccess.nextTrick MutationObserver 
+- 4. 可以快速分析一个复杂的异步嵌套逻辑，并掌握分析方法
+    - 通过打断点，观察执行栈
+- 5. 使用Promise实现串行
+    - 
+- 6. Node与浏览器EventLoop的差异
